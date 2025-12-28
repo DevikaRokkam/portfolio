@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devika Rokkam | Java Full Stack Engineer</title>
+  <meta name="description" content="Banking-focused Java Full Stack Engineer (Spring Boot, React, Kafka, OAuth2/JWT). Case studies: HDFC and Fifth Third." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">Devika Rokkam</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>Java Full Stack Engineer (Banking)</h1>
+      <p class="sub">
+        I build secure, scalable banking platforms using Spring Boot, React, Kafka, and OAuth2/JWT.
+        Recent work includes customer-facing digital banking (Fifth Third) and enterprise workflows (HDFC).
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+      </div>
+
+      <div class="quick">
+        <span>Spring Boot</span><span>React</span><span>Kafka</span><span>OAuth2/JWT</span><span>MySQL</span><span>AWS/Azure</span>
+      </div>
+    </section>
+  </header>
+
+  <main class="container">
+    <section id="projects" class="section">
+      <h2>Project Case Studies</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Fifth Third Bank – Digital Banking Web App</h3>
+          <p>
+            Built customer-facing features and backend services for account access, transaction history, and background reconciliation.
+          </p>
+          <ul class="bullets">
+            <li>Spring Boot microservices with OAuth2/JWT and secure REST APIs</li>
+            <li>Kafka-based async processing + Spring Scheduler reconciliation</li>
+            <li>Cloud monitoring and production-grade operations</li>
+          </ul>
+          <a class="link" href="fifth-third.html">Read case study →</a>
+        </article>
+        <article class="card">
+          <h3>HDFC Bank – Internal Workflow Platform</h3>
+          <p>
+            Built secure internal workflows with approvals, SLA visibility, audit logging, RBAC, and event-driven notifications.
+          </p>
+          <ul class="bullets">
+            <li>React UI with reusable components, server-side pagination, filters</li>
+            <li>Spring Boot APIs with JWT-based SSO + RBAC</li>
+            <li>Kafka events for workflow notifications and status tracking</li>
+          </ul>
+          <a class="link" href="hdfc.html">Read case study →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Core Skills</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Backend</h3>
+          <p>Java, Spring Boot, Spring Security, REST, OAuth2/JWT, Kafka, Scheduler, Microservices</p>
+        </div>
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>React, Redux, JavaScript, component design, performance optimization</p>
+        </div>
+        <div class="card">
+          <h3>Data</h3>
+          <p>MySQL, Hibernate, indexing, pagination, query optimization</p>
+        </div>
+        <div class="card">
+          <h3>Cloud/DevOps</h3>
+          <p>AWS/Azure, Docker, OpenShift, CI/CD (Jenkins), monitoring (CloudWatch)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p class="small">
+        </p>
+        <div class="links">
+          <a href="mailto:rdevikareddy22@gmail.com">📧 rdevikareddy22@gmail.com</a>
+          <a href="call:+13127725481">📞 +1 (312)-772-5481</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">© <span id="y"></span> Devika Rokkam</div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

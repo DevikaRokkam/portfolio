@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fifth Third Case Study | Devika Rokkam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">← Back</a>
+    </nav>
+
+    <section class="hero slim">
+      <h1>Fifth Third Bank – Digital Banking Web App</h1>
+      <p class="sub">
+        Customer-facing account access and transaction history with secure APIs, async processing, and reconciliation jobs.
+      </p>
+    </section>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Architecture</h2>
+      <div class="card">
+        <p class="small"></p>
+        <img class="img" src="assets/fifththird-arch.png" alt="Fifth Third architecture diagram" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Problem → Decision → Trade-off → Result</h2>
+      <div class="card">
+        <h3>Problem</h3>
+        <ul class="bullets">
+          <li>High-volume transaction data required reliable processing and reconciliation</li>
+          <li>Strict authentication/authorization for customer and admin access</li>
+          <li>Need observability and safe deployments in banking environment</li>
+        </ul>
+
+        <h3>Decision</h3>
+        <ul class="bullets">
+          <li>Spring Boot REST APIs for accounts and transaction history</li>
+          <li>OAuth2 + JWT + SSO with role-based access controls</li>
+          <li>Kafka for asynchronous event processing between services</li>
+          <li>Spring Scheduler for periodic reconciliation jobs</li>
+          <li>Cloud monitoring (e.g., CloudWatch) and containerized deployments</li>
+        </ul>
+
+        <h3>Trade-offs</h3>
+        <ul class="bullets">
+          <li>Schedulers are simple and predictable, but must be designed for idempotency and retries</li>
+          <li>Kafka improves throughput and decoupling, but requires careful ordering/error handling</li>
+        </ul>
+
+        <h3>Result</h3>
+        <ul class="bullets">
+          <li>Reliable transaction processing and background reconciliation</li>
+          <li>Secure access controls aligned with financial security standards</li>
+          <li>Operational visibility through monitoring and disciplined deployments</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tech Stack</h2>
+      <div class="two-col">
+        <div class="card"><h3>Backend</h3><p>Java, Spring Boot, Spring Security, REST, Scheduler</p></div>
+        <div class="card"><h3>Messaging</h3><p>Kafka producers/consumers, event-driven processing</p></div>
+        <div class="card"><h3>Auth</h3><p>OAuth2, JWT, SSO, RBAC</p></div>
+        <div class="card"><h3>Cloud/DevOps</h3><p>AWS, Docker, OpenShift, CI/CD, monitoring</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">© <span id="y"></span> Devika Rokkam</div>
+  </footer>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

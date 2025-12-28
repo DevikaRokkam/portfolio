@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HDFC Case Study | Devika Rokkam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">← Back</a>
+    </nav>
+
+    <section class="hero slim">
+      <h1>HDFC Bank – Internal Workflow Platform</h1>
+      <p class="sub">
+        Secure internal system for request submission, approvals, SLA tracking, audit logging, and notifications.
+      </p>
+    </section>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Architecture</h2>
+      <div class="card">
+        <p class="small"></p>
+        <img class="img" src="assets/hdfc-arch.png" alt="HDFC architecture diagram" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Problem → Decision → Trade-off → Result</h2>
+      <div class="card">
+        <h3>Problem</h3>
+        <ul class="bullets">
+          <li>Manual approvals with limited tracking</li>
+          <li>No centralized SLA visibility</li>
+          <li>Need strong access control and audit trail</li>
+        </ul>
+
+        <h3>Decision</h3>
+        <ul class="bullets">
+          <li>React UI with reusable components (tables, filters, pagination)</li>
+          <li>Spring Boot APIs with Azure AD JWT-based SSO</li>
+          <li>RBAC via roles/groups/claims</li>
+          <li>Kafka events for workflow notifications and status updates</li>
+          <li>MySQL + Hibernate with indexing and pagination</li>
+        </ul>
+
+        <h3>Trade-offs</h3>
+        <ul class="bullets">
+          <li>Kafka adds operational complexity, but decouples services and scales notifications</li>
+          <li>Claims-based RBAC requires IAM coordination and careful token design</li>
+        </ul>
+
+        <h3>Result</h3>
+        <ul class="bullets">
+          <li>Improved approval turnaround and visibility</li>
+          <li>Secure role-based access and complete auditability</li>
+          <li>Scalable event-driven notification pattern</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tech Stack</h2>
+      <div class="two-col">
+        <div class="card"><h3>Frontend</h3><p>React, reusable components, server-side pagination</p></div>
+        <div class="card"><h3>Backend</h3><p>Java, Spring Boot, Spring Security, REST</p></div>
+        <div class="card"><h3>Auth</h3><p>Azure AD SSO, JWT, RBAC (claims)</p></div>
+        <div class="card"><h3>Integration</h3><p>Kafka events for notifications</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">© <span id="y"></span> Devika Rokkam</div>
+  </footer>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
